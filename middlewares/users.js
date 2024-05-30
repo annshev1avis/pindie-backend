@@ -31,7 +31,6 @@ const createUser = async (req, res, next) => {
 };
 
 const findUserById = async (req, res, next) => {
-    console.log("GET /users/:id");
     try {
         req.user = await users.findById(req.params.id, { password: 0 });
         next();
